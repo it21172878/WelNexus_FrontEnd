@@ -85,15 +85,15 @@ const Index = () => {
           {board.map((cell, index) => (
             <TouchableOpacity
               key={index}
-              className="w-[70px] h-[70px] bg-lime-400 border border-lime-900 items-center justify-center rounded-lg m-1"
+              className="w-[70px] h-[70px] bg-lime-700 border border-lime-400 items-center justify-center rounded-lg m-1"
               onPress={() => handlePress(index)}
             >
-              <Text className="text-lime-950 text-4xl font-bold">{cell}</Text>
+              <Text className="text-lime-200 text-4xl font-bold">{cell}</Text>
             </TouchableOpacity>
           ))}
         </View>
         <TouchableOpacity
-          className="mt-2 px-6 py-3 bg-lime-500 rounded-lg"
+          className="mt-10 px-6 py-3 bg-lime-500 rounded-lg w-36"
           onPress={resetGame}
         >
           <Text className="text-lime-900 text-lg font-bold">Restart Game</Text>
@@ -102,7 +102,7 @@ const Index = () => {
         {/* Prompt Box (Modal) when Game Over */}
         <Modal visible={isGameOver} transparent animationType="slide">
           <View className="flex-1 justify-center items-center bg-black/60 ">
-            <View className="bg-lime-300 p-6 rounded-lg justify-center items-center w-96 h-60">
+            <View className="bg-lime-200 p-6 rounded-lg justify-center items-center w-96 h-60">
               <Text className="text-lime-950 text-2xl font-bold mb-3">
                 {winner === "Draw"
                   ? "🤝 It's a Draw!"
